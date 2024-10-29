@@ -70,5 +70,5 @@ variable "enable_partitioning" {
 variable "auto_delete_on_idle" {
   type        = string
   description = "(Optional) The ISO 8601 timespan duration of the idle interval after which the Queue is automatically deleted, minimum of 5 minutes."
-  default     = "null"
+  default     = null
 }

@@ -27,7 +27,7 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_auto_delete_on_idle"></a> [auto\_delete\_on\_idle](#input\_auto\_delete\_on\_idle) | (Optional) The ISO 8601 timespan duration of the idle interval after which the Queue is automatically deleted, minimum of 5 minutes. | `string` | `"null"` | no |
+| <a name="input_auto_delete_on_idle"></a> [auto\_delete\_on\_idle](#input\_auto\_delete\_on\_idle) | (Optional) The ISO 8601 timespan duration of the idle interval after which the Queue is automatically deleted, minimum of 5 minutes. | `string` | `null` | no |
 | <a name="input_default_message_ttl"></a> [default\_message\_ttl](#input\_default\_message\_ttl) | Optional) The ISO 8601 timespan duration of the TTL of messages sent to this queue. | `string` | `"P1D"` | no |
 | <a name="input_enable_partitioning"></a> [enable\_partitioning](#input\_enable\_partitioning) | (Optional) Boolean flag which controls whether to enable the queue to be partitioned across multiple message brokers. | `bool` | `false` | no |
 | <a name="input_env"></a> [env](#input\_env) | The environment to deploy to | `string` | n/a | yes |
