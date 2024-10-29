@@ -1,7 +1,7 @@
 variable "name" {
   type        = string
   description = "The name of your Service Bus Namespace"
-  default     = null
+  default = null
 }
 
 variable "env" {
