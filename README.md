@@ -36,7 +36,7 @@ No modules.
 | <a name="input_max_delivery_count"></a> [max\_delivery\_count](#input\_max\_delivery\_count) | (Optional) Integer value which controls when a message is automatically dead lettered. | `number` | `3` | no |
 | <a name="input_max_message_size_in_kilobytes"></a> [max\_message\_size\_in\_kilobytes](#input\_max\_message\_size\_in\_kilobytes) | (Optional) Integer value which controls the maximum size of a message allowed on the queue for Premium SKU. | `number` | `256` | no |
 | <a name="input_max_size_in_megabytes"></a> [max\_size\_in\_megabytes](#input\_max\_size\_in\_megabytes) | (Optional) Integer value which controls the size of memory allocated for the queue. | `number` | `1024` | no |
-| <a name="input_name"></a> [name](#input\_name) | The name of your Service Bus Namespace | `string` | n/a | yes |
+| <a name="input_name"></a> [name](#input\_name) | The name of your Service Bus Namespace | `string` | `null` | no |
 | <a name="input_product"></a> [product](#input\_product) | The product name | `string` | n/a | yes |
 | <a name="input_queues"></a> [queues](#input\_queues) | Map of service bus queues to create. | <pre>map(object({<br>    queue_name = string<br>  }))</pre> | `{}` | no |
 | <a name="input_resource_group_name"></a> [resource\_group\_name](#input\_resource\_group\_name) | The resource group your Cosmos DB account will be assigned to | `string` | n/a | yes |
