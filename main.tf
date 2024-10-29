@@ -1,5 +1,5 @@
 resource "azurerm_servicebus_namespace" "this" {
-  name                = var.name == null ? "${var.product}-${var.env}" : "${var.name}-${var.env}"
+  name                = var.name == null ? "${var.product}-sbns-${var.env}" : "${var.name}-${var.env}"
   location            = var.location
   resource_group_name = var.resource_group_name
   sku                 = "Standard"
