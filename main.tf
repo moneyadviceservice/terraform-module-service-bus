@@ -3,6 +3,11 @@ resource "azurerm_servicebus_namespace" "this" {
   location            = var.location
   resource_group_name = var.resource_group_name
   sku                 = "Standard"
+
+  dynamic "network_rules" {
+    for_each  = var.subnet_id != null ? [var.subnet_id] : []
+    subnet_id = var.subnet_id
+  }
 }
 
 resource "azurerm_servicebus_queue" "this" {

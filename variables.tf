@@ -1,7 +1,7 @@
 variable "name" {
   type        = string
   description = "The name of your Service Bus Namespace"
-  default = null
+  default     = null
 }
 
 variable "env" {
@@ -71,5 +71,11 @@ variable "enable_partitioning" {
 variable "auto_delete_on_idle" {
   type        = string
   description = "(Optional) The ISO 8601 timespan duration of the idle interval after which the Queue is automatically deleted, minimum of 5 minutes."
+  default     = null
+}
+
+variable "subnet_id" {
+  type        = string
+  description = "The ID of the subnet to connect to"
   default     = null
 }
