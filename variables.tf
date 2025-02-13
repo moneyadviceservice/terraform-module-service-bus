@@ -79,3 +79,14 @@ variable "subnet_id" {
   description = "The ID of the subnet to connect to"
   default     = null
 }
+
+variable "public_network_access_enabled" {
+  type        = bool
+  description = "(Optional) Is public network access enabled for the Service Bus Namespace?"
+  default     = true
+}
+
+variable "subnet_id" {
+  type        = string
+  description = "The Subnet ID which should be able to access this ServiceBus Namespace."
+} 

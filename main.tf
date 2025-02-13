@@ -4,9 +4,14 @@ resource "azurerm_servicebus_namespace" "this" {
   resource_group_name = var.resource_group_name
   sku                 = "Standard"
 
-  dynamic "network_rules" {
-    for_each  = var.subnet_id != null ? [var.subnet_id] : []
-    subnet_id = var.subnet_id
+  public_network_access_enabled = var.public_network_access_enabled
+
+  network_rule_set {
+    default_action                = "Allow"
+    public_network_access_enabled = var.public_network_access_enabled
+    network_rules {
+      subnet_id = var.subnet_id
+    }
   }
 }
 
