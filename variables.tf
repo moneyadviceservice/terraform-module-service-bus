@@ -90,3 +90,8 @@ variable "sku" {
   type    = string
   default = "Standard"
 }
+
+variable "capacity" {
+  type    = number
+  default = 0
+}
