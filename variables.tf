@@ -95,3 +95,8 @@ variable "capacity" {
   type    = number
   default = 0
 }
+
+variable "premium_messaging_partitions" {
+  type    = number
+  default = 0
+}
