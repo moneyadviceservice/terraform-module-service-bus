@@ -9,9 +9,11 @@ resource "azurerm_servicebus_namespace" "this" {
   network_rule_set {
     default_action                = "Allow"
     public_network_access_enabled = var.public_network_access_enabled
-    network_rules {
-      subnet_id = var.subnet_id
-    }
+    dynamic "network_rules" {
+      for_each = var.subnet_id != null ? [1] : []
+      content {
+        subnet_id = var.subnet_id
+      }
   }
 }
 
