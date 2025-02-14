@@ -85,3 +85,8 @@ variable "public_network_access_enabled" {
   description = "(Optional) Is public network access enabled for the Service Bus Namespace?"
   default     = true
 }
+
+variable "sku" {
+  type    = string
+  default = "Standard"
+}
