@@ -14,6 +14,7 @@ resource "azurerm_servicebus_namespace" "this" {
       content {
         subnet_id = var.subnet_id
       }
+    }
   }
 }
 
