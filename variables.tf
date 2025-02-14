@@ -85,8 +85,3 @@ variable "public_network_access_enabled" {
   description = "(Optional) Is public network access enabled for the Service Bus Namespace?"
   default     = true
 }
-
-variable "subnet_id" {
-  type        = string
-  description = "The Subnet ID which should be able to access this ServiceBus Namespace."
-} 
