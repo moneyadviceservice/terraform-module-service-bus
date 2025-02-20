@@ -11,6 +11,7 @@ resource "azurerm_servicebus_namespace" "this" {
     default_action                = "Allow"
     public_network_access_enabled = var.public_network_access_enabled
     trusted_services_allowed      = var.trusted_services_allowed
+    ip_rules                      = var.ip_rules
     dynamic "network_rules" {
       for_each = var.subnet_id != null ? [1] : []
       content {
