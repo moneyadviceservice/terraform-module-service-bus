@@ -87,16 +87,25 @@ variable "public_network_access_enabled" {
 }
 
 variable "sku" {
-  type    = string
-  default = "Standard"
+  type        = string
+  description = "Defines which tier to use."
+  default     = "Standard"
 }
 
 variable "capacity" {
-  type    = number
-  default = 0
+  type        = number
+  description = "Specifies the capacity."
+  default     = 0
 }
 
 variable "premium_messaging_partitions" {
-  type    = number
-  default = 0
+  type        = number
+  description = "Specifies the number messaging partitions. Only valid when sku is Premium and the minimum number is 1."
+  default     = 0
+}
+
+variable "trusted_services_allowed " {
+  type        = bool
+  description = "Are Azure Services that are known and trusted for this resource type are allowed to bypass firewall configuration?"
+  default     = true
 }
