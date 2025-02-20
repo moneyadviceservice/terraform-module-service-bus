@@ -113,5 +113,5 @@ variable "trusted_services_allowed" {
 variable "ip_rules" {
   type        = string
   description = "One or more IP Addresses, or CIDR Blocks which should be able to access the ServiceBus Namespace."
-  default     = null
+  default     = []
 }
