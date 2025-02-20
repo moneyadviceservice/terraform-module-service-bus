@@ -104,10 +104,10 @@ variable "premium_messaging_partitions" {
   default     = 0
 }
 
-variable "trusted_services_allowed " {
+variable "trusted_services_allowed" {
   type        = bool
   description = "Are Azure Services that are known and trusted for this resource type are allowed to bypass firewall configuration?"
-  default     = true
+  default     = null
 }
 
 variable "ip_rules" {
