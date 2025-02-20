@@ -105,13 +105,18 @@ variable "premium_messaging_partitions" {
 }
 
 variable "trusted_services_allowed" {
-  type        = string
+  type        = bool
   description = "Are Azure Services that are known and trusted for this resource type are allowed to bypass firewall configuration?"
-  default     = null
+  default     = true
 }
 
 variable "ip_rules" {
-  type        = list
+  type        = list(any)
   description = "One or more IP Addresses, or CIDR Blocks which should be able to access the ServiceBus Namespace."
   default     = [""]
+}
+
+variable "network_rule_set_default_action" {
+  type    = string
+  default = "Allow"
 }

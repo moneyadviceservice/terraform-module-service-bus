@@ -8,7 +8,7 @@ resource "azurerm_servicebus_namespace" "this" {
   public_network_access_enabled = var.public_network_access_enabled
 
   network_rule_set {
-    default_action                = "Allow"
+    default_action                = var.network_rule_set_default_action
     public_network_access_enabled = var.public_network_access_enabled
     trusted_services_allowed      = var.trusted_services_allowed
     ip_rules                      = var.ip_rules
