@@ -12,7 +12,6 @@ resource "azurerm_servicebus_namespace" "this" {
       default_action                = var.network_rule_set_default_action
       public_network_access_enabled = var.public_network_access_enabled
       trusted_services_allowed      = var.trusted_services_allowed
-      ip_rules                      = var.ip_rules
       network_rules {
         subnet_id = var.subnet_id
 
