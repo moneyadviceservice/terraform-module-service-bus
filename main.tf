@@ -7,7 +7,7 @@ resource "azurerm_servicebus_namespace" "this" {
   premium_messaging_partitions = var.premium_messaging_partitions
 
   dynamic "network_rule_set" {
-    for_each = var.ip_rules || var.subnet_id != null ? [1] : []
+    for_each = var.subnet_id != null ? [1] : []
     content {
       default_action                = var.network_rule_set_default_action
       public_network_access_enabled = var.public_network_access_enabled
