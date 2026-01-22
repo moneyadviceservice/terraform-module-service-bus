@@ -30,8 +30,8 @@ resource "azurerm_servicebus_queue" "this" {
   partitioning_enabled = var.enable_partitioning
   auto_delete_on_idle  = var.auto_delete_on_idle
   default_message_ttl  = var.default_message_ttl
-  lock_duration = try(
-    each.value.queue_lock_duration,
+  lock_duration = coalesce(
+    try(each.value.queue_lock_duration, null),
     var.lock_duration
   )
   max_delivery_count    = var.max_delivery_count
