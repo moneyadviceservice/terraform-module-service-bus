@@ -27,11 +27,12 @@ variable "product" {
 variable "queues" {
   type = map(object({
     queue_name          = string
-    queue_lock_duration = string
+    queue_lock_duration = optional(string)
   }))
   description = "Map of service bus queues to create."
   default     = {}
 }
+
 variable "default_message_ttl" {
   type        = string
   description = "Optional) The ISO 8601 timespan duration of the TTL of messages sent to this queue."
