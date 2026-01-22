@@ -1,7 +1,7 @@
 variable "name" {
   type        = string
   description = "The name of your Service Bus Namespace"
-  default = null
+  default     = null
 }
 
 variable "env" {
@@ -72,4 +72,51 @@ variable "auto_delete_on_idle" {
   type        = string
   description = "(Optional) The ISO 8601 timespan duration of the idle interval after which the Queue is automatically deleted, minimum of 5 minutes."
   default     = null
+}
+
+variable "subnet_id" {
+  type        = string
+  description = "The ID of the subnet to connect to"
+  default     = null
+}
+
+variable "public_network_access_enabled" {
+  type        = bool
+  description = "(Optional) Is public network access enabled for the Service Bus Namespace?"
+  default     = true
+}
+
+variable "sku" {
+  type        = string
+  description = "Defines which tier to use."
+  default     = "Standard"
+}
+
+variable "capacity" {
+  type        = number
+  description = "Specifies the capacity."
+  default     = 0
+}
+
+variable "premium_messaging_partitions" {
+  type        = number
+  description = "Specifies the number messaging partitions. Only valid when sku is Premium and the minimum number is 1."
+  default     = 0
+}
+
+variable "trusted_services_allowed" {
+  type        = bool
+  description = "Are Azure Services that are known and trusted for this resource type are allowed to bypass firewall configuration?"
+  default     = true
+}
+
+variable "ip_rules" {
+  type        = list(any)
+  description = "One or more IP Addresses, or CIDR Blocks which should be able to access the ServiceBus Namespace."
+  default     = [""]
+}
+
+variable "network_rule_set_default_action" {
+  type    = string
+  default = "Allow"
 }
