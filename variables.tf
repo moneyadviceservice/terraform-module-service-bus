@@ -26,7 +26,8 @@ variable "product" {
 
 variable "queues" {
   type = map(object({
-    queue_name = string
+    queue_name          = string
+    queue_lock_duration = optional(string)
   }))
   description = "Map of service bus queues to create."
   default     = {}
